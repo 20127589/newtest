@@ -8,3 +8,4 @@ node {
              dockerImage.push()
         }
     }  
+}

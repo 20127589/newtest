@@ -1,11 +1,11 @@
-node {  
-          stage('Build image') {
-            dockerImage = docker.build("2imfatx/20127589:latest")
+pipepline{
+          agent none
+          stages{
+                    stage('Git'){
+                           git branch: 'main', url: 'https://github.com/20127589/newtest.git'   
+                    }
+          
+          
+          
           }
-    
-          stage('Push image') {
-             withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-             dockerImage.push()
-        }
-    }  
 }

@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                git 'https://github.com/20127589/newtest.git'
                 sh 'mvn clean install'
             }
         }

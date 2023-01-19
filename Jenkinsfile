@@ -1,6 +1,6 @@
 node {   
     stage('Clone repository') {
-        git credentialsId: 'git', url: 'https://github.com/20127589/newtest.git'
+        git  url: 'https://github.com/20127589/newtest.git'
     }
     
     stage('Build image') {

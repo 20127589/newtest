@@ -1,11 +1,26 @@
-pipepline{
-          agent none
-          stages{
-                    stage('Git'){
-                           git branch: 'main', url: 'https://github.com/20127589/newtest.git'   
-                    }
-          
-          
-          
-          }
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/my-repo.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'make build'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'make test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'make deploy'
+            }
+        }
+    }
 }

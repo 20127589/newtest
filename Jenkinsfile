@@ -1,8 +1,4 @@
-node {   
-    stage('Clone repository') {
-        git  url: 'https://github.com/20127589/newtest.git'
-    }
-    
+node {  
     stage('Build image') {
        dockerImage = docker.build("2imfatx/20127589:latest")
     }
